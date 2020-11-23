@@ -2,7 +2,7 @@
 # Goal
 # My Approach
 # Architecture
-## Entity Relationship Diagram
-## CI pipeline Structure
+## Database Structure
+## CI Pipeline Structure
 # Project Tracking
 
