@@ -7,6 +7,6 @@
 # Project Tracking
 # Known Issues
 # Further Improvements
-# Authour
+# Author
 Ross Farquhar
 
