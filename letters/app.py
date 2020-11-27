@@ -9,7 +9,7 @@ def letters():
     letter_two = random.choice(string.ascii_letters)
     letter_three = random.choice(string.ascii_letters)
     letters = letter_one + letter_two + letter_three
-    return Response(letters, mimetext="text/plain")
+    return Response(letters, mimetype="text/plain")
 
 if __name__ == '__main__':
     app.run(port=5002, host='0.0.0.0')
