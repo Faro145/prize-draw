@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 @app.route('/entry_code', methods=['GET'])
 def entry_code():
-    letters = requests.get(letters:5002/letters)
-    numbers = request.get(numbers:5003/numbers)
+    letters = requests.get("https://letters:5002/letters")
+    numbers = request.get("https://numbers:5003/numbers")
     entry_code = letters + numbers
-    return Response(entry_code, mimetext="text/plain")
+    return Response(entry_code, mimetype="text/plain")
    
 @app.route('/prize', methods=['POST'])
 def prize():
@@ -22,8 +22,8 @@ def prize():
         else:
             print("You have not won a prize")
             count = count + 1
-        return Response(prize, mimetext="text/plain")
+        return Response(prize, mimetype="text/plain")
 
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(port=5001, host='0.0.0.0')
   
