@@ -8,10 +8,10 @@ class TestBase(TestCase):
         return app
 
 class TestLetters(TestBase):
-
-def test_letters(self):
-    letter_one = "A"
-    letter_two = "k"
-    letter_three = "G"
-    response = self.client.get(url_for('letters'))
-    self.assertIn(response.data, letters)
+    
+    def test_letters(self):
+        letter_one = "A"
+        letter_two = "k"
+        letter_three = "G"
+        response = self.client.get(url_for('letters'))
+        self.assertIn(response.data, letters)
