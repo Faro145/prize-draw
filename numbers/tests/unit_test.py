@@ -10,8 +10,8 @@ class TestBase(TestCase):
 class TestNumbers(TestBase):
 
 def test_numbers(self):
-        number_one = "1"
-        number_two = "9"
-        number_three = "0"
-        response = self.client.get(url_for('numbers'))
-        self.assertIn(response.data, numbers)
+    number_one = "1"
+    number_two = "9"
+    number_three = "0"
+    response = self.client.get(url_for('numbers'))
+    self.assertIn(response.data, numbers)

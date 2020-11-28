@@ -10,8 +10,8 @@ class TestBase(TestCase):
 class TestLetters(TestBase):
 
 def test_letters(self):
-        letter_one = "A"
-        letter_two = "k"
-        letter_three = "G"
-        response = self.client.get(url_for('letters'))
-        self.assertIn(response.data, letters)
+    letter_one = "A"
+    letter_two = "k"
+    letter_three = "G"
+    response = self.client.get(url_for('letters'))
+    self.assertIn(response.data, letters)
