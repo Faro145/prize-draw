@@ -3,7 +3,7 @@
 # My Approach
 # Architecture
 ## Database Structure
-![ER Diagram](https://imgur.com/a/5smW880.png)
+![Imgur](https://i.imgur.com/DHJdwK4.png)
 ## CI Pipeline Structure
 # Project Tracking
 # Risk Assessment
