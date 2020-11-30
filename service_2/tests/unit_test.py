@@ -1,7 +1,6 @@
 from flask import url_for
 from flask_testing import TestCase
-
-from letters import app
+from application import app
 
 class TestBase(TestCase):
     def create_app(self):
@@ -13,5 +12,5 @@ class TestLetters(TestBase):
         letter_one = "A"
         letter_two = "k"
         letter_three = "G"
-        response = self.client.get(url_for('letters'))
+        response = self.client.get(url_for('get_letters'))
         self.assertIn(response.data, letters)

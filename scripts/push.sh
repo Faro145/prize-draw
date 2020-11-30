@@ -1,9 +1,11 @@
-sudo docker tag application rfarq75/application
-sudo docker tag entry_code rfarq75/entry_code 
-sudo docker tag letters rfarq75/letters 
-sudo docker tag numbers rfarq75/numbers
+#! /bin/bash
 
-sudo docker push rfarq75/application
-sudo docker push rfarq75/entry_code
-sudo docker push rfarq75/letters
-sudo docker push rfarq75/numbers
+sudo docker tag application rfarq75/service_1
+sudo docker tag entry_code rfarq75/service_2
+sudo docker tag letters rfarq75/service_3 
+sudo docker tag numbers rfarq75/service_4
+
+sudo docker push rfarq75/service_1
+sudo docker push rfarq75/service_2
+sudo docker push rfarq75/service_3
+sudo docker push rfarq75/service_4
