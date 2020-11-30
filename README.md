@@ -21,7 +21,7 @@ The board was split into three sections: "To do", "In Progress" and "Done". The 
 # Risk Assessment
 The risk assessment for this project is available to review in the image below.
 
-
+![Imgur](https://i.imgur.com/c0ysCNU.png?1)
 
 It contains the risks determined for this project as well as the impact, probability and overall level of each risk. Mitigations have also been provided for these risks. In addition, the risks are adjusted after the mitigations and further reviewed in later updates.
 
