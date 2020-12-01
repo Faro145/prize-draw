@@ -2,7 +2,7 @@ from flask import request, Response
 import requests
 from application import app
 
-app.route('/get/entry_code', methods=['GET', 'POST'])
+@app.route('/get/entry_code', methods=['GET', 'POST'])
 def get_entry_code():
     letters = request.data.decode('utf-8')
     numbers = request.data.decode('utf-8')

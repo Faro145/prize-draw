@@ -12,5 +12,6 @@ class TestLetters(TestBase):
         letter_one = "A"
         letter_two = "k"
         letter_three = "G"
+        letters = letter_one + letter_two + letter_three
         response = self.client.get(url_for('get_letters'))
-        self.assertIn(response.data, letters)
+        self.assertIn(letters.encode('utf-8'), response.data)
