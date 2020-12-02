@@ -1,0 +1,40 @@
+- name: Install packages using apt
+  apt:
+    name: 
+    state: latest
+  with_items: 
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+    - python3
+    - python-pip
+    - python-setuptools
+  tags: docker
+
+- name: Add Docker GPG apt Key
+  apt_key:
+    url:  https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags: docker
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename|lower }} stable
+  tags: docker
+
+- name: Install docker-ce
+  apt:
+    name: docker-ce
+    state: latests
+    update_cache: true
+
+- name: Run and enable docker
+  service:
+    name: docker
+    state: started
+
+- name: pip docker
+  pip:
+    executable: pip3
+    name: docker
