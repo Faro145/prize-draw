@@ -9,9 +9,5 @@ class TestBase(TestCase):
 class TestResponse(TestBase):
     
     def test_numbers(self):
-        number_one = "1"
-        number_two = "9"
-        number_three = "0"
-        numbers = number_one + number_two + number_three
         response = self.client.get(url_for('get_numbers'))
-        self.assertIn(numbers.encode('utf-8'), response.data)
+        self.assertEquals(response.status_code, 200)

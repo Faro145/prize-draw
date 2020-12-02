@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo docker build -t application ./service_1 
-sudo docker build -t entry_code ./service_2
-sudo docker build -t letters ./service_3
-sudo docker build -t numbers ./service_4
+sudo docker build -t service_1 ./service_1 
+sudo docker build -t service_2 ./service_2
+sudo docker build -t service_3 ./service_3
+sudo docker build -t service_4 ./service_4
 
 sudo docker network create my-network
 sudo docker network connect my-network service_1

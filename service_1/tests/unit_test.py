@@ -26,7 +26,6 @@ class TestBase(TestCase):
             id = 1,
             letters = "PFx",
             numbers = "436",
-            entry_code = "PFx436",
             prize = "You have not won a prize"
         )      
 
@@ -44,7 +43,7 @@ class TestResponse(TestBase):
     
     def test_prizedraw(self):
         with patch('requests.get') as g:
-            g.return_value.text = 'PFx436'
+            g.return_value.text = '436'
             with patch('requests.post') as p:
               p.return_value.text = 'You have not won a prize'
         response = self.client.get(url_for('prizedraw'))

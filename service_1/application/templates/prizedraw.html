@@ -1,9 +1,0 @@
-{% extends "layout.html" %}
-{% block body_content %}
-<h1>{{letters}} + {{numbers}} = {{entry_code}} = {{prize}}</h1>
-  
-<<div class='form'>
-    <form action="{{ url_for('prizedraw') }}">
-    <button type="submit">Try your luck!</button>
-    </form>
-{% endblock %}
