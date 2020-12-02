@@ -1,6 +1,7 @@
 version: '3.7'
 services:
   service_1:
+    container: service_1
     build: ./service_1
     image: rfarq/service_1
     deploy:
@@ -12,6 +13,7 @@ services:
       DB_URI: ${DB_URI}
       KEY: ${KEY}
   service_2:
+    container: service_2
     build: ./service_2
     image: rfarq/service_2
     deploy:
@@ -20,6 +22,7 @@ services:
     - published: 5001
       target: 5001
   service_3:
+    container: service_3
     build: ./service_3
     image: rfarq75/service_3
     deploy:
@@ -28,6 +31,7 @@ services:
     - published: 5002
       target: 5002
   service_4:
+    container: service_4
     build: ./service_4
     image: rfarq75/service_4
     deploy:
