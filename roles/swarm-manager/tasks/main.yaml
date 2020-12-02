@@ -1,0 +1,8 @@
+- name: Swarm init
+  community.general.dockaer_swam:
+    state: present
+
+- name: Get swarm info
+  community.general.docker_swarm_info:
+  ignore_errors: yes
+  register: swarm_info
