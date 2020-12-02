@@ -12,6 +12,6 @@ sudo docker network connect my-network service_3
 sudo docker network connect my-network service_4
 
 sudo docker run -d -p 5000:5000 --name service_1 --network my-network service_1
-sudo docker run -d -p 5000:5000 --name service_2 --network my-network service_2
-sudo docker run -d -p 5000:5000 --name service_3 --network my-network service_3
-sudo docker run -d -p 5000:5000 --name service_4 --network my-network service_4
+sudo docker run -d -p 5001:5001 --name service_2 --network my-network service_2
+sudo docker run -d -p 5002:5002 --name service_3 --network my-network service_3
+sudo docker run -d -p 5003:5003 --name service_4 --network my-network service_4
