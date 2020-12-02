@@ -8,6 +8,9 @@ services:
     ports:
     - published: 5000
       target: 5000
+    environment:
+      DB_URI: ${DB_URI}
+      KEY: ${KEY}
   service_2:
     build: ./service_2
     image: rfarq/service_2
