@@ -4,6 +4,7 @@ from application import app
 
 @app.route('/get/prize', methods=['GET', 'POST'])
 def get_prize():
+    letters = request.data.decode('utf-8')
     numbers = request.data.decode('utf-8')
     if numbers == "371":
         prize = "You won a big prize"
