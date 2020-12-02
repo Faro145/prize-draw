@@ -1,4 +1,6 @@
 #! /bin/bash
+export DB_URI: ${DB_URI}
+export KEY: ${KEY}
 
 sudo docker build -f testing/Dockerfile -t prizedraw-testing-image .
 sudo docker run -it -d --name testing-container prizedraw-testing-image
