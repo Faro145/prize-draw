@@ -25,6 +25,7 @@ This is reflected in the service oriented architecture (seen below) where servic
 ![Imgur](https://i.imgur.com/nCUcKIX.png?1)
 
 ## CI Pipeline Structure
+The CI pipeline (which is pictured below) displays how the code written in Python is transport to GitHub via Git. GitHub provides the repository and the means to track the progress of the project. The repository is then pulled to a Jenkins server which provides a platform to build the application (using Docker images) and run tests. 
 
 ![Imgur](https://i.imgur.com/ktSBUEz.png)
 
