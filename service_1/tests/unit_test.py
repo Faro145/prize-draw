@@ -43,9 +43,9 @@ class TestResponse(TestBase):
     
     def test_prizedraw(self):
         with patch('requests.get') as g:
-            g.return_value.text = '436'
             with patch('requests.post') as p:
-              p.return_value.text = 'You have not won a prize'
-        response = self.client.get(url_for('prizedraw'))
-        self.assertEqual(response.status_code, 200)
+                g.return_value.text = '436'
+                p.return_value.text = 'You have not won a prize'
+            response = self.client.get(url_for('prizedraw'))
+            self.assertEqual(response.status_code, 200)
 
