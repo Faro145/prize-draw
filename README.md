@@ -26,6 +26,8 @@ This is reflected in the service oriented architecture (seen below) where servic
 
 ## CI Pipeline Structure
 
+[Imgur](https://i.imgur.com/ktSBUEz.png)
+
 # Project Tracking
 The Projects feature in GitHub has been utilised to assist with keeping track of the progress of the development of the application. This can be found by clicking the Projects tab in this repository or by viewing the image below.
 
