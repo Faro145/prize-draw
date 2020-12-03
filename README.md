@@ -22,7 +22,7 @@ As shown in the ERD, the app models a many-to-many relationship between the lett
 
 This is reflected in the service oriented architecture (seen below) where service 1 uses get requests to gather the letters and numbers (from services 2 and 3 respectively) to generate a code in service 4. A post requests is then used to determine whether the code matches the code that earns a big prize, a small prize or no prize at all. The resulting values are also stored in the database.
 
-
+![Imgur](https://i.imgur.com/nCUcKIX.png?1)
 
 ## CI Pipeline Structure
 
