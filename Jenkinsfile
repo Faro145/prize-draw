@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
-            steps {
-                sh "bash ./scripts/test.sh"
-            }
-        }
         stage('Build') {
             steps {
-                sh " bash./scripts/build.sh"
+                sh "bash ./scripts/build.sh"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh " bash./scripts/test.sh"
             }
         }
         stage('Deploy') {
