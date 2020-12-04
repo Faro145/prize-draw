@@ -26,7 +26,7 @@
 - name: Install docker-ce
   apt:
     name: docker-ce
-    state: latests
+    state: latest
     update_cache: true
 
 - name: Run and enable docker
