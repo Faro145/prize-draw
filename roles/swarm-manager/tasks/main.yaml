@@ -1,5 +1,5 @@
 - name: Swarm init
-  community.general.dockaer_swam:
+  community.general.docker_swarm:
     state: present
 
 - name: Get swarm info
