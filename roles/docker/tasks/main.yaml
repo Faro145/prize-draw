@@ -8,7 +8,7 @@
     - curl
     - software-properties-common
     - python3
-    - python-pip
+    - python3-pip
     - python-setuptools
   tags: docker
 
