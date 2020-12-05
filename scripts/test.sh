@@ -1,14 +1,15 @@
 #! /bin/bash
-export DB_URI: ${DB_URI}
-export KEY: ${KEY}
+sudo apt install python3 python3-pip python3-venv -y
 
-sudo docker build -f testing/Dockerfile -t prizedraw-testing-image .
-sudo docker run -it -d --name testing-container prizedraw-testing-image
+python3 -m venv venv
+. venv/bin/activate
 
-sudo docker exec testing-container pytest ./service_1 --cov ./service_1
-sudo docker exec testing-container pytest ./service_2 --cov ./service_2
-sudo docker exec testing-container pytest ./service_3 --cov ./service_3
-sudo docker exec testing-container pytest ./service_4 --cov ./service_4
+pip3 install -r requirements.txt
 
-docker stop testing-container
-docker rm testing-container
+pytest --cov ./service1/application --cov-report term-missing
+pytest --cov ./service2/application --cov-report term-missing
+pytest --cov ./service3/application --cov-report term-missing
+pytest --cov ./service3/application --cov-report term-missing
+
+deactivate
+rm -rf venv
