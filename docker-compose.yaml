@@ -3,6 +3,8 @@ services:
   service_1:
     build: ./service_1
     image: rfarq75/service_1
+    deploy:
+      replicas: 3
     ports:
     - published: 5000
       target: 5000
@@ -13,6 +15,8 @@ services:
   service_2:
     build: ./service_2
     image: rfarq75/service_2
+    deploy:
+      replicas: 3
     ports: 
     - published: 5001
       target: 5001
@@ -20,6 +24,8 @@ services:
   service_3:
     build: ./service_3
     image: rfarq75/service_3
+    deploy:
+      replicas: 3
     ports: 
     - published: 5002
       target: 5002
@@ -27,6 +33,8 @@ services:
   service_4:
     build: ./service_4
     image: rfarq75/service_4
+    deploy:
+      replicas: 3
     ports: 
     - published: 5003
       target: 5003
