@@ -16,7 +16,7 @@ class TestBase(TestCase):
         DEBUG=True
         )
         return app
-    
+
     def setUp(self):
         db.session.commit()
         db.drop_all()
@@ -27,11 +27,11 @@ class TestBase(TestCase):
             letters = "PFx",
             numbers = "436",
             prize = "You have not won a prize"
-        )      
+        )
 
         db.session.add(testPrize)
         db.session.commit()
-    
+
     def tearDown(self):
         db.session.remove()
         db.drop_all()
@@ -40,12 +40,14 @@ class TestResponse(TestBase):
     def test_index(self):
         response = self.client.get(url_for('index'))
         self.assertEqual(response.status_code, 200)
-    
+
     def test_prizedraw(self):
         with patch('requests.get') as g:
-            g.return_value.text = '436'
             with patch('requests.post') as p:
-              p.return_value.text = 'You have not won a prize'
-        response = self.client.get(url_for('prizedraw'))
-        self.assertEqual(response.status_code, 200)
+                g.return_value.text = 'EqH371'
+                p.return_value.text = 'You have not won a prize'
+                response = self.client.get(url_for('prizedraw'))
+                self.assertEquals(response.status_code, 200)
+                self.assertIn( b'EqH371', response.data )
+                self.assertIn( b'You have not won a prize', response.data )
 

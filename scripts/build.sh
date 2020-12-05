@@ -5,3 +5,5 @@ echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 pip install --user ansible
 echo $PATH
 ansible-playbook -i ./inventory ./playbook.yaml
+
+docker-compose build

@@ -1,5 +1,5 @@
 from unittest.mock import patch
-from flask import url_for
+from flask import url_for, jsonify
 from flask_testing import TestCase
 from application import app
 
@@ -10,20 +10,30 @@ class TestBase(TestCase):
 class TestResponse(TestBase):
     def test_big_prize(self):
         with patch('requests.get') as g:
-            g.return_value.text = '371'
+            g.return_value.text = 'EqH371'
             response = self.client.post(
-                url_for('get_prize'),
-                data="371",
-                follow_redirects=True)
+            url_for('post_prize'),
+            data='EqH371',
+            follow_redirects=True)
             self.assertIn(b'You won a big prize', response.data)
-    
-    def test_no_prize(self): 
-        response = self.client.post(
-            url_for('get_prize'),
-            data="563",
-            follow_redirects=True
-        )
-        self.assertIn(b'You have not won a prize', response.data)
+
+    def test_small_prize(self):
+        with patch('requests.get') as g:
+            g.return_value.text = 'EqH371'
+            response = self.client.post(
+            url_for('post_prize'),
+            data='wLC371',
+            follow_redirects=True)
+            self.assertIn(b'You won a big prize', response.data)
+
+    def test_no_prize(self):
+        with patch('requests.get') as g:
+            g.return_value.text = 'EqH371'
+            response = self.client.post(
+            url_for('post_prize'),
+            data='TDx482',
+            follow_redirects=True)
+            self.assertIn(b'You have not won a prize', response.data)
 
 
 

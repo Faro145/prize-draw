@@ -13,7 +13,8 @@ def index():
 def prizedraw():
     letters = requests.get("http://service_2:5001/get/letters")
     numbers = requests.get("http://service_3:5002/get/numbers")
-    prize = requests.post("http://service_4:5003/post/prize", json={'letters':letters.text, 'numbers': numbers.text})
+    entry_code = letters.text + numbers.text
+    prize = requests.post("http://service_4:5003/post/prize", data=entry_code)
 
     data = Prize_Draw(letters=letters.text, numbers=numbers.text, prize=prize.text)
     db.session.add(data)
