@@ -19,16 +19,16 @@ class TestResponse(TestBase):
 
     def test_small_prize(self):
         with patch('requests.get') as g:
-            g.return_value.text = 'EqH371'
+            g.return_value.text = 'wLC371'
             response = self.client.post(
             url_for('post_prize'),
             data='wLC371',
             follow_redirects=True)
-            self.assertIn(b'You won a big prize', response.data)
+            self.assertIn(b'You won a small prize', response.data)
 
     def test_no_prize(self):
         with patch('requests.get') as g:
-            g.return_value.text = 'EqH371'
+            g.return_value.text = 'TDx371'
             response = self.client.post(
             url_for('post_prize'),
             data='TDx482',

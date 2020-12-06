@@ -9,7 +9,7 @@ def post_prize():
 
     if entry_code  == "EqH371":
         prize = "You won a big prize"
-    elif data[:3] == "EqH" or data[2:] == "371" :
+    elif entry_code[:3] == "EqH" or entry_code[2:] == "371" :
         prize = "You won a small prize"
     else:
         prize = "You have not won a prize"
