@@ -1,15 +1,11 @@
 #! /bin/bash
-sudo apt install python3 python3-pip python3-venv python3-flask -y
+sudo docker build -f testing/Dockerfile -t prizedraw-testing-image .
+sudo docker run -it -d --name testing-container prizedraw-testing-image
 
-python3 -m venv venv
-. venv/bin/activate
+sudo docker exec testing-container pytest ./service_1 --cov ./service_1
+sudo docker exec testing-container pytest ./service_2 --cov ./service_2
+sudo docker exec testing-container pytest ./service_3 --cov ./service_3
+sudo docker exec testing-container pytest ./service_4 --cov ./service_4
 
-pip3 install -r requirements.txt
-
-pytest --cov ./service_1/application --cov-report term-missing
-pytest --cov ./service_2/application --cov-report term-missing
-pytest --cov ./service_3/application --cov-report term-missing
-pytest --cov ./service_4/application --cov-report term-missing
-
-deactivate
-rm -rf venv
+docker stop testing-container
+docker rm testing-container
