@@ -1,5 +1,5 @@
 from unittest.mock import patch
-from flask import url_for, jsonify
+from flask import url_for,
 from flask_testing import TestCase
 from application import app
 
@@ -28,7 +28,7 @@ class TestResponse(TestBase):
 
     def test_no_prize(self):
         with patch('requests.get') as g:
-            g.return_value.text = 'TDx371'
+            g.return_value.text = 'TDx482'
             response = self.client.post(
             url_for('post_prize'),
             data='TDx482',
