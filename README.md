@@ -11,6 +11,16 @@ The goal of the project was to create an application that generates â€œObjectsâ€
 * A reverse proxy
 
 # My Approach
+My approach was to create a set of services that would potentially generate a prize. These would consist of the following:
+
+* Service 1 - serves as the hub for the other services and connect to the database. It would also perform get and post requests from the other services to collect the required data for the entry_code to send to service 4 and receive the potential prize. The result would be stored in the database.
+
+* Service 2 - generates 3 random letters in a string
+
+* Service 3 - generates 3 random numbers in a string
+
+* Service 4 - compares entry_code with prize code and requests the entry_code data from service_1. If there was a complete match; the prize would be big. If either the letters or the numbers matched; the prize would be small. No matches means no prize.
+
 # Architecture
 ## Database Structure/Sevrice-Oriented Architecture 
 
@@ -25,7 +35,7 @@ This is reflected in the service oriented architecture (seen below) where servic
 ![Imgur](https://i.imgur.com/nCUcKIX.png?1)
 
 ## CI Pipeline Structure
-The CI pipeline (which is pictured below) displays how the code written in Python is transport to GitHub via Git. GitHub provides the repository and the means to track the progress of the project. The repository is then pulled to a Jenkins server which provides a platform to build the application (using Docker images) and run tests. 
+The CI pipeline (which is pictured below) displays how the code written in Python is transport to GitHub via Git. GitHub provides the repository and the means to track the progress of the project. The repository is then polled to a Jenkins server (via a Webhook) which provides a platform to build the services (using Docker images) and run tests. This would occur using a Jenkins pipeline which was configured with an Ansible playbook. The images would be constructed togther in a network using Docker-Compose. Pytest would then be used to test the services. The services would then be deployed with Docker Stack and become visible using a reverse proxy.
 
 ![Imgur](https://i.imgur.com/ktSBUEz.png)
 
@@ -43,9 +53,25 @@ The risk assessment for this project is available to review in the image below.
 
 It contains the risks determined for this project as well as the impact, probability and overall level of each risk. Mitigations have also been provided for these risks. In addition, the risks are adjusted after the mitigations and further reviewed in later updates.
 
-## Testing
+# Testing
+Service_1 - all tests passed and coverage of application folder was 100% but was lowered due to app.py
+![Imgur](https://i.imgur.com/YiATwPd.png?1)
+
+Service_2 - all tests passed and coverage of application folder was 100% but was lowered due to app.py
+![Imgur](https://i.imgur.com/6c1xrYc.png?1)
+
+Service_3 - all tests passed and coverage of application folder was 100% but was lowered due to app.py
+![Imgur](https://i.imgur.com/6bR3hdJ.png?1)
+
+Service_4 - all tests passed and coverage of application folder was 100% but was lowered due to app.py
+![Imgur](https://i.imgur.com/iU3TsVe.png?1)
+
 # Known Issues
+* The required infromation for the database must be placed in any virtual machine to prevent the connection between the database and the service_1 application form failing 
+
 # Further Improvements
+* Using css and html to mkae the application more aesthetically pleasing to the eye
+
 # Author
 Ross Farquhar
 
